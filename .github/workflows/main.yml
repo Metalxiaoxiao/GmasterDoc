@@ -12,4 +12,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{secrets.KEY}}
           port: ${{ secrets.PORT }}
-          script: cd /www/wwwroot/www.gmaster.wiki && rm -rf ./GmasterDoc || git clone https://github.com/Metalxiaoxiao/GmasterDoc.git && python -m venv .venv && source ./.venv/bin/activate && pip install mkdocs-material && mkdocs build
+          script: cd /www/wwwroot/www.gmaster.wiki && rm -rf ./GmasterDoc || git clone https://github.com/Metalxiaoxiao/GmasterDoc.git && python3 -m venv .venv && source ./.venv/bin/activate && pip3 install mkdocs-material && mkdocs build
