@@ -2,3 +2,28 @@ site_name: Gmaster Documentation
 site_url: https://docs.gmaster.com
 theme:
   name: material
+
+nav:
+  - 首页: index.md
+  - 软件组:
+      - 软件组首页: 软件组/index.md
+      - 培训:
+          - 培训首页: 软件组/培训/index.md
+          - 自学清单: 软件组/培训/自学清单.md
+          - Lesson1 开发环境配置: 软件组/培训/Lesson1 开发环境配置.md
+          - Github Education认证: 软件组/培训/Github Education认证.md
+      - 开发:
+          - 开发首页: 软件组/开发/index.md
+          - 常用git命令: 软件组/开发/常用git命令.md
+          - SSH: 软件组/开发/ssh.md
+          - 烧录器: 软件组/开发/烧录器.md
+          - LiveWatch: 软件组/开发/livewatch.md
+      - Checklist:
+          - Checklist首页: 软件组/checklist/index.md
+          - 电机: 软件组/checklist/电机.md
+          - 烧录: 软件组/checklist/烧录.md
+          - 串口读取数据: 软件组/checklist/串口读取数据.md
+  - 硬件组: 硬件组/index.md
+  - 机械组: 机械组/index.md
+  - 视觉组: 视觉组/index.md
+  - 宣运组: 宣运组/index.md

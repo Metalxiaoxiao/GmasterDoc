@@ -1,17 +1,9 @@
-# Welcome to MkDocs
+# 欢迎来到GMaster战队文档库
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+这里是西交利物浦大学GMaster战队文档库。
 
-## Commands
+本仓库由2026届软件组成员发起，由战队成员集体建设与维护，承载着我们在研发中积累的实践经验和系统知识。我们希望通过系统化的文档，帮助每位队员——无论是刚刚入门的新成员，还是经验丰富的老将——都能更顺畅地开展开发，更快地定位问题，更高效地协同工作，从而将更多精力专注于创新与突破。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+文档库将持续演进，与项目同步成长。我们鼓励每一位队员在使用中补充、修正与完善——你的每一次提交，都是在为战队积累宝贵的资产。
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+欢迎探索，欢迎共建，欢迎一起打造我们共同的技术记忆。

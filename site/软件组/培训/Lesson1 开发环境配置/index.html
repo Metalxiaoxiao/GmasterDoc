@@ -1,0 +1,1473 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+      
+      
+        <link rel="prev" href="../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/">
+      
+      
+        <link rel="next" href="../Github%20Education%E8%AE%A4%E8%AF%81/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Lesson1 开发环境配置 - Gmaster Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gmaster Documentation" class="md-header__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gmaster Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lesson1 开发环境配置
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gmaster Documentation" class="md-nav__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gmaster Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件组首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    培训
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    培训
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    培训首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自学清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson1 开发环境配置
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson1 开发环境配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开始之前
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装工具链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装工具链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么是工具链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装GCC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编写你的第一个C程序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编写你的第一个C程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        像原始人一样编程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Github%20Education%E8%AE%A4%E8%AF%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github Education认证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用git命令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/ssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烧录器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91/livewatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiveWatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Checklist
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/%E7%94%B5%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/%E7%83%A7%E5%BD%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烧录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    串口读取数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机械组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    视觉组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    宣运组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开始之前
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装工具链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装工具链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么是工具链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装GCC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编写你的第一个C程序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编写你的第一个C程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        像原始人一样编程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="c">手把手带你从零开始搭建一个C语言开发环境</h1>
+<h2 id="_1">开始之前</h2>
+<p>谈到编程，什么是编程，都需要那些步骤？简单点来说: 编程就是将我们希望计算机做的事用代码(一种特殊的文本)描述出来，然后将代码转换成可执行文件(就是最终的程序)，交给计算机执行，完成特定的任务。<br />
+那么在这个过程中，我们需要准备哪些工具软件呢？准备好开发说需要的各种工具软件，就是搭建开发环境。</p>
+<hr />
+<h2 id="_2">安装工具链</h2>
+<h3 id="_3">什么是工具链</h3>
+<p>在上面的介绍中提到，我们需要把代码转换为可执行的程序。在这里有一个初学者可能产生的误解: 代码不就是可以运行的吗？为什么还需要转换呢？其实，代码本身是不能直接运行的，它只是一个<strong>文本文件</strong>，计算机无法理解。因此，我们需要一个工具来将这个文本文件转换成计算机可以执行的二进制文件(也就是由0和1组成的可执行文件)。<br />
+那么这个工具是什么呢？如果以前有学过一点编程的同学可能会说是<strong>编译器</strong>(Compile)<a href="#fn1">[1]</a>。这个说法大体是正确的，但不够全面。事实上，在现代软件开发的过程中，从源代码到可执行文件的转换过程是由一系列工具组成的，这个工具的集合就被称为<strong>工具链</strong>(Toolchain)，而编译器则是工具链中的一个重要组成部分。关于工具链和构建过程将在以后的课程中详细介绍。<br />
+现在我们知道了工具链的概念: 工具链就是一个能够将一个或多个有着特殊格式的<strong>文本文件</strong>(源代码)经过包括编译(编排、翻译)等一系列处理步骤，最终生成一个或多个可执行文件的工具集合。</p>
+<h3 id="gcc">安装GCC</h3>
+<p><strong>GCC</strong>(GNU Compiler Collection)是一个开源的编译器套件，支持多种编程语言，包括C、C++、Fortran等。同时，GCC有着强大的跨平台支持，可以在Linux、Windows、macOS等操作系统上运行，是C语言开发的标准编译器之一。本教程将以Windows下的GCC为例，介绍如何安装工具链。</p>
+<ol>
+<li><strong>下载GCC</strong>: 访问 <a href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/">SourceForge MinGW-w64</a> 页面，下载<code>x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z</code>文件。或者在本教程文档的同目录下找到同名文件下载.</li>
+<li><strong>解压文件</strong>: 将下载的<code>.7z</code>文件解压到一个方便好记目录，比如<code>D:\Dev\env</code>下，切记路径不能包含中文(非ascii字符)和特殊符号。</li>
+<li><strong>记下路径</strong>: 解压后会得到一个名为<code>mingw64</code>的文件夹<a href="#fn2">[2]</a>，进入文件夹，打开<code>bin</code>目录，记下此时的路径，比如<code>D:\Dev\env\mingw64\bin</code>。可以看到bin目录下有很多以<code>.exe</code>结尾的可执行文件，这些就是GCC的编译器和相关工具。在其中，我们可以找到<code>gcc.exe</code>，这便是GCC编译器的主程序。双击一下它，没反应？别慌，这是因为它是一个命令行工具，没有图形化界面，需要在命令行中运行，马上我们就会用到它。</li>
+</ol>
+<hr />
+<h2 id="c_1">编写你的第一个C程序</h2>
+<h3 id="_4">像原始人一样编程</h3>
+<p>有了GCC编译器，是不是可以构建我们的第一个C程序了呢？当然可以，尽管这种方法可能看起来比较原始。</p>
+<ol>
+<li>
+<p><strong>创建源代码文件</strong>: 找到一个合适的目录(非中文路径)，比如<code>D:\Dev\project\myFirstCProgram</code>，同样记下这个路径，在该目录下右键新建文本文档，重命名为<code>hello.txt</code>(请先打开资源管理器的“查看”选项卡，找到“显示”，勾选“文件扩展名”，以便能看到文件的后缀名)。</p>
+</li>
+<li>
+<p><strong>编写代码</strong>: 双击或右键使用<code>记事本</code>打开<code>hello.txt</code>文件，输入以下代码:</p>
+<p>```</p>
+<h1 id="include">include <stdio.h></h1>
+<p>int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</p>
+<p>```</p>
+<p>保存并关闭文件。</p>
+</li>
+<li>
+<p><strong>编译代码</strong>: 回到一开始记下的gcc的bin文件夹==（以下所有使用到GCC的命令都需要在该目录下执行）==右键bin文件夹的空白处，选择<code>在终端中打开</code>(windows 11)或在资源管理器地址栏输入<code>cmd</code>并回车，打开命令提示符窗口。还记得我们之前记下的GCC的bin路径吗？这里以<code>D:\Dev\env\mingw64\bin</code>为例，实际请根据你记下的路径更改</p>
+<p>```
+gcc.exe -x c {工程路径}\hello.txt -o {工程路径}\hello.exe</p>
+<p>```</p>
+<p>例如</p>
+<p>```
+gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstCProgram\hello.exe</p>
+<p>```</p>
+<p>这条命令会将<code>hello.txt</code>文件编译成一个名为<code>hello.exe</code>的可执行文件。</p>
+</li>
+<li>
+<p><strong>运行程序</strong>: 先别急着退出终端，如果命令输入完成后没有报错，那就证明你的程序应该编译成功了，你可以检查一下文件夹中是否有出现<code>hello.exe</code>可执行文件。接下来回到工程目录并在新建终端中输入以下命令来运行程序:</p>
+<p>```
+.\hello.exe</p>
+<p>```</p>
+<blockquote>
+<p>此处的<code>hello.exe</code>就是编译输出的程序，<code>.\</code>表示当前目录下，因此这条命令的意思是运行当前目录下的hello.exe程序，这种路径的表示方法叫<strong>相对路径</strong>。</p>
+</blockquote>
+<p>如果一切顺利，你应该会看到输出:</p>
+<p>```
+Hello, World!</p>
+<p>```</p>
+</li>
+</ol>
+<h3 id="_5">一些思考和反思</h3>
+<p>首先恭喜你，你已经成功编写并运行了你的第一个C程序！但请按耐住激动的心情，不知你是否对刚才的一系列操作感到迷惑和恐慌？接下来让我一一解释在上面的操作中都发生了什么，并且思考是否有更好的方法来完成这些操作。</p>
+<ol>
+<li>
+<p><strong>操作解释</strong></p>
+<ol>
+<li>首先我们创建并编写源代码文件<code>hello.txt</code>，这就是我们所说的源代码，编译器通过读取这个文件中的内容来了解我们希望计算机执行的任务。不知道你有无注意到一个细节，在上面的教程中，我特意保留了新建文本文件的<code>.txt</code>后缀名，这是想告诉你，所谓的源代码，其实就是一个<strong>文本文件</strong>，其与其他文本文件没有本质区别，唯一的区别仅在于其内容符合特定的语法规范(C语言语法)。你可以更改文件的后缀名为<code>.c</code>，也就是变成<code>hello.c</code>，这实际上并不会改变文件的内容，它仍然是一个文本文件，只不过<code>.c</code>后缀名可以告诉编译器和系统: 这是一个特殊的文本文件，里面的内容是C语言的源代码，请你用针对C源代码的方式来编译或打开它。</li>
+<li>接着我们使用命令来调用GCC编译器为我们编译源代码文件，生成可执行文件<code>hello.exe</code>。关于什么是命令，这在以后的课程中会详细介绍，这里只需要知道，命令就是我们通过键盘输入的一些指令，计算机通过这些指令来执行特定的操作。接下来我来解释上面输入的命令每部分是什么意思。</li>
+</ol>
+<p>```
+gcc.exe -x c D:\Dev\project\myFirstCProgram\hello.txt -o D:\Dev\project\myFirstCProgram\hello.exe</p>
+<p>```</p>
+<ul>
+<li><code>gcc.exe</code>: GCC编译器的主程序</li>
+<li><code>D:\Dev\project\myFirstCProgram\hello.txt</code>: 这是之前记下的工程目录路径，告诉GCC我们要编译的源代码文件在哪里，以及生成的可执行文件要放在哪里。</li>
+<li><code>-x c</code>: 这个选项告诉GCC，我们要编译的源代码文件是C语言的代码。如果文件后缀名为<code>.c</code>，编译器会自动识别为C语言代码，这个选项可以省略。</li>
+<li><code>hello.txt</code>: 这是我们要编译的源代码文件名。</li>
+<li><code>-o</code>: 这个选项告诉GCC，编译生成的可执行文件名和路径。</li>
+</ul>
+<p>你可以输入以下命令来获取更多关于GCC的帮助信息:</p>
+<p>```
+gcc.exe --help</p>
+<p>```</p>
+</li>
+<li>
+<p><strong>回顾反思</strong><br />
+    以上操作过程中，你可能有以下疑问:</p>
+<ol>
+<li>使用Windows自带的记事本太呆了，代码要一个一个字打，输错了也没有提示。而且我看网上好像也没人用记事本写代码，有没有更好的的方式？</li>
+<li>编译时输入的命令也太长了，还要记什么路径，而且每次使用GCC，都需要在GCC所在的文件夹中打开终端，有没有能在所有地方都能轻松使用GCC的方法？</li>
+</ol>
+<p>针对上述的问题，我的回答是: 有的兄弟，有的。让我们进入下一章节，来介绍如何简化上述的过程，摆脱这种原始人的开发方式。</p>
+</li>
+</ol>
+<hr />
+<h2 id="_6">让开发更加高效</h2>
+<p>接下来就让我介绍如何才能拜托这种原始人的开发方式，让我们步入更加现代的C语言开发。</p>
+<h3 id="_7">配置环境变量</h3>
+<p>在上述的操作中，我们需要在GCC的安装目录下运行GCC，这显然不够方便。能不能让计算机帮我们找到GCC编译器呢？答案是可以的，我们可以通过设置<strong>环境变量</strong>(Environment Variable)来实现。<br />
+环境变量是操作系统用来存储系统信息的变量，就像一本“系统说明书”，告诉程序一些运行所需的路径信息、配置参数、特殊设置等。你可以把系统环境变量理解为一种特殊的系统设置项，只不过不在Windows的设置界面中。<br />
+一个系统环境变量包含变量名和对应的值，变量名是一个字符串，用于标识这个变量，而值则是与这个变量相关的具体信息，比如路径、配置等。<br />
+在这里，我们需要设置一个名为<code>PATH</code>的环境变量，它是一个包含多个路径的字符串，操作系统会在这些路径中查找可执行文件。当我们在命令行中输入一个命令(可执行文件名)时，操作系统会在<code>PATH</code>变量中指定的路径中查找对应的可执行文件。</p>
+<h4 id="_8">设置步骤</h4>
+<ol>
+<li>点击开始菜单(Windows图标)，搜索“环境变量”，选择“编辑系统环境变量”。</li>
+<li>在<code>高级</code>选项卡中，点击右下角<code>环境变量</code>按钮。</li>
+<li>在环境变量窗口中，找到上方<code>用户变量</code>区域<a href="#fn3">[3]</a>，找到名为<code>Path</code>的变量，选中后点击<code>编辑</code>。</li>
+<li>找到并打开之前GCC(MinGW)安装目录下的<code>bin</code>文件夹，比如<code>D:\Dev\env\mingw64\bin</code>，按<code>Ctrl+C</code>复制这个路径。</li>
+<li>在编辑环境变量窗口中，点击<code>新建</code>，将刚刚复制的目录路径按<code>Ctrl+V</code>粘贴进去，一路点击点击<code>确定</code>保存。</li>
+</ol>
+<h4 id="_9">验证设置</h4>
+<p>设置完成后，我们需要验证一下是否成功。右键<code>Windows徽标</code>，选择<code>终端</code>，或者按<code>Win + R</code>输入<code>cmd</code>打开一个新的命令提示符窗口(注意必须是新的窗口，因为环境变量的更改只会在新打开的窗口中生效)，输入以下命令:</p>
+<pre><code>gcc --help
+
+</code></pre>
+<p>如果你看到GCC的帮助信息，那么恭喜你，环境变量设置成功了！<br />
+现在你可以试着在其他地方打开终端，输入gcc命令，看看是否能成功运行。</p>
+<p>在设置好了环境变量后，可以直接输入想要运行的可执行文件名(如<code>gcc</code>)，系统便会为我们进行以下操作:</p>
+<ol>
+<li>系统首先在当前目录下(即你打开命令行时所在的目录，显示在输入命令时的<code>&gt;</code>前)查找是否有名为<strong>gcc</strong>.exe的可执行文件，若有，则直接运行。</li>
+<li>若在当前目录下没有找到，则系统会在<code>PATH</code>环境变量中指定的所有路径中查找名为<strong>gcc</strong>.exe的可执行文件，若找到，则运行它。</li>
+<li>若在所有路径中都没有找到，则会提示“找不到命令”，这时你可以检查一下是否输入了正确的命令，或者是否设置了正确的环境变量。</li>
+</ol>
+<p>至此，你已经了解并成功设置了环境变量，在之后的命令中，你可以直接输入<code>gcc</code>而不需要每次都进入GCC的安装目录。</p>
+<h4 id="_10">一些小任务</h4>
+<ul>
+<li>你能试着将你常用的一些程序的路径添加到<code>PATH</code>环境变量中吗？例如添加<code>WeChat.exe</code>的路径，尝试看能不能在命令行中直接输入<code>WeChat</code>来打开微信。</li>
+<li>思考<code>PATH</code>环境变量存在的意义，为什么系统不直接全盘查找需要运行的文件，而是通过<code>PATH</code>来指定查找路径？</li>
+</ul>
+<h3 id="_11">安装现代文本编辑器</h3>
+<p>我们提到，源代码其实就是一个文本文件，因此编写代码便需要<strong>文本编辑器</strong>。Windows自带的<code>记事本</code>便是一个文本编辑器，你完全可以使用记事本来写代码，但它功能过于简单，只有最基础的文字编辑功能，无法提供诸如语法高亮、代码补全、错误提示等功能，开发效率极低。幸运的是，有很多现代的文本编辑器(或称<strong>代码编辑器</strong>)可以帮助我们更高效地编写代码。<br />
+<code>Visual Studio Code</code>(简称<code>VS Code</code>)是一个开源的、跨平台的文本编辑器，支持多种编程语言，包括C语言。它提供了丰富的插件生态系统，可以通过安装插件来扩展功能，非常适合C语言开发。本教程将以VS Code为例，介绍如何安装和配置一个现代的文本编辑器。</p>
+<h4 id="vs-code">安装VS Code</h4>
+<ol>
+<li><strong>下载VS Code</strong>: 访问 <a href="https://code.visualstudio.com/">Visual Studio Code官网</a> 下载适合你操作系统(Windows)的版本。</li>
+<li><strong>安装VS Code</strong>:<ol>
+<li>双击下载的安装包(不需要管理员)</li>
+<li>在第一个页面，点击<code>我同意此协议</code>，然后点击<code>下一步</code>。</li>
+<li>在第二个页面，选择VS Code程序本体的安装路径，<strong>强烈建议使用默认路径</strong>(大约400MB左右，且不会随着软件使用增长)，点击<code>下一步</code>。</li>
+<li>在第三个页面，<code>选择开始菜单文件夹</code>，可以使用默认设置，点击<code>下一步</code>。</li>
+<li>在第四个页面:<ul>
+<li><code>创建桌面快捷方式</code>: 根据需要选择</li>
+<li><code>将“通过Code打开”...</code>: 两个选项<strong>务必勾上</strong>，这样以后打开Code工程会方便很多</li>
+<li><code>将Code注册为受支持的文件类型的编辑器</code>: 保持默认勾选，这样以后双击打开<code>.c</code>等源码文件会直接用VS Code打开</li>
+<li><code>添加到PATH</code>: 保持默认勾选，作用同上文所述。<br />
+    点击<code>下一步</code>.</li>
+</ul>
+</li>
+<li>在第五个页面，点击<code>安装</code>，等待安装完成。</li>
+</ol>
+</li>
+</ol>
+<h4 id="vs-code_1">汉化VS Code</h4>
+<p>安装完成后，打开VS Code，你会发现VS Code的界面是英文的，如果你更习惯使用中文界面，可以通过以下步骤进行汉化:</p>
+<ol>
+<li>打开VS Code，点击左侧活动栏中的<code>Extensions</code>图标(或按<code>Ctrl+Shift+X</code>)。</li>
+<li>在搜索框中输入<code>Chinese</code>，找到<code>Chinese (Simplified)(简体中文) Language Pack for Visual Studio Code</code>，点击<code>Install</code>。</li>
+<li>安装完成后，VS Code会在右下角弹窗提示你重启，点击<code>Change Language and Restart</code>按钮即可，也可手动关闭软件重启VS Code。</li>
+</ol>
+<h4 id="vs-codec">为VS Code安装C语言开发相关插件</h4>
+<p>VS Code只是一个文本编辑器，本身并不具备各种代码编写开发的辅助功能，但可以通过安装插件来扩展，这正是VS Code的强大之处.<br />
+在上一步的汉化中，你其实已经接触到了VS Code的插件系统。重新打开<code>扩展</code>页面，搜索并安装以下插件:</p>
+<ul>
+<li><code>C/C++ Extension Pack</code>: 这是一个C/C++语言的扩展包，包含三个插件: <code>C/C++</code> <code>C/C++ Themes</code> <code>CMake Tools</code>，提供了C/C++语言的语法分析、代码补全、错误提示、构建辅助等功能。</li>
+<li><code>Code Runner</code>: 用于快速编译运行单文件C代码。</li>
+</ul>
+<h4 id="vs-code_2">使用VS Code编程</h4>
+<p>安装好插件之后，点击左上角<code>文件</code>-<code>打开文件...</code>，找到你在上一章节中编写第一个C程序的文件夹（当然也可以新建一个文件夹），点击<code>选择文件夹</code>。<br />
+打开左侧栏<code>资源管理器</code>，右键空白处新建文件，新建一个C源文件，例如<code>VSC_Hello.c</code>并打开。<br />
+尝试手打以下代码，体验VS Code的代码智能补全功能：</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf(&quot;Hello, VS Code!\n&quot;);
+    return 0;
+}
+
+</code></pre>
+<p>完成后按<code>Ctrl + S</code>保存文件。<br />
+接下来就是编译运行可执行文件，你有两种方法：</p>
+<ul>
+<li>点击右上角<code>切换面板</code>或按<code>Ctrl+j</code>打开底部面板，在面板顶部栏选择<code>终端</code>以打开内置终端，输入上一章节的编译命令，例如:</li>
+</ul>
+<pre><code>gcc VSC_Hello.c -o VSC_Hello.exe
+
+</code></pre>
+<p>运行程序：</p>
+<pre><code>.\VSC_Hello.exe
+
+</code></pre>
+<ul>
+<li>除了输入命令外，我们刚刚安装的<code>Code Runner</code>插件为我们提供了更方便的方法：编写好程序并保存后，点击右上角小三角旁的下拉菜单，选择<code>Run Code</code>，或直接按<code>Ctrl + Alt + N</code>编译运行程序。可以看到，插件自动为我们执行了之前输入的gcc命令，是不是很方便？</li>
+</ul>
+<h2 id="_12">总结</h2>
+<p>在本课程中，我们学习了如何在Windows上安装配置C语言开发环境，包括安装GCC编译器、配置环境变量以及安装VS Code编辑器和相关插件。在最后，我想强调和补充一些关键点：</p>
+<ol>
+<li>
+<p>对于一个完整的开发环境，一般包括两个相对独立的部分：</p>
+<ul>
+<li>文本编辑器及相关开发辅助工具（如语言服务器<a href="#fn4">[4]</a>，源代码管理工具，构建工具等）</li>
+<li>工具链（包括编译器、链接器、调试器等）</li>
+</ul>
+<p>当然也有一些软件，针对某种或某类编程语言，将以上的文本编辑器，工具链和常用开发工具集成在一起，形成一种可以一键安装的软件，我们叫它<strong>集成开发环境(Integrated Development Environment, IDE)</strong>。<br />
+这种一键安装配置的IDE，提供开箱即用的开发体验，极大简化了环境配置过程，方便了开发者的使用。但IDE体积往往较大，启动较慢，且配置不够灵活，因此我们仍需要掌握如何安装配置文本编辑器+工具链的开发环境（尤其对于嵌入式开发来说）。</p>
+</li>
+<li>
+<p>在开发的过程中，我们往往会遇到各种重复繁琐的操作，但人是懒惰的（这点尤其适用于软件开发者），我们不希望总是重复的做一些工作，因此往往会开发出各种自动化的工具来帮我们完成这些任务。例如在本课程中介绍的编译代码的方式：一开始我们通过输入一个很长的命令来完成编译，而后通过一些方式简化了命令的长度，最后，我们又通过使用VS Code插件来帮我们输入命令。这种自动化的过程在往后的开发中很常见，例如在编译具有很多源文件的大型工程中，我们不需要针对每个源文件都输入一次编译命令，而是可以通过<strong>构建工具</strong>来自动化这一过程。又例如，在一些开发项目（比如STM32开发）中存在着相同的初始化代码或库文件，这时我们可以使用<strong>代码生成工具</strong>来帮助我们快速生成这些重复的代码。</p>
+</li>
+</ol>
+<h2 id="_13">下一步</h2>
+<p>本课程介绍了搭建基于VS Code的C语言开发环境的全过程，但针对VS Code本身的使用只是草草带过，因此接下来你可以尝试学习使用VS Code的各种功能，了解相关机制，探索更多VS Code插件。在本章节的附件中，提供了一些有用的资源和补充教程，帮助你更深入地了解VS Code的使用。</p>
+<hr />
+<ol>
+<li>
+<p>除了编译器，还有<strong>解释器</strong>，其作用与编译器大体相同，只是工作方式有所区别 <a href="#fnref1">↩︎</a></p>
+</li>
+<li>
+<p>MinGW，全称Minimalist GNU for Windows，是一个在Windows上运行的GNU工具链，其中包括我们需要的GCC编译器 <a href="#fnref2">↩︎</a></p>
+</li>
+<li>
+<p>系统变量对所用用户生效，而用户变量只对当前用户生效。因为一般Windows电脑都只有一个用户，因此在没有冲突的情况下，在这两个区域添加更改环境变量效果是一样的 <a href="#fnref3">↩︎</a></p>
+</li>
+<li>
+<p>语言服务器(LSP)，提供代码智能补全、高亮、定义跳转、错误提示等功能 <a href="#fnref4">↩︎</a></p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

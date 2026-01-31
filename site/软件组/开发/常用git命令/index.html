@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.gmaster.com/">
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/">
       
       
+        <link rel="prev" href="../">
       
-        <link rel="next" href="%E8%BD%AF%E4%BB%B6%E7%BB%84/">
+      
+        <link rel="next" href="../ssh/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Gmaster Documentation</title>
+        <title>常用git命令 - Gmaster Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gmaster" class="md-skip">
+        <a href="#git" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Gmaster Documentation" class="md-header__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
+    <a href="../../.." title="Gmaster Documentation" class="md-header__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              首页
+              常用git命令
             
           </span>
         </div>
@@ -178,7 +180,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Gmaster Documentation" class="md-nav__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
+    <a href="../../.." title="Gmaster Documentation" class="md-nav__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -193,19 +195,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -221,7 +214,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -230,18 +222,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -262,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -280,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -355,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/" class="md-nav__link">
         
   
   
@@ -383,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="md-nav__link">
         
   
   
@@ -411,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
         
   
   
@@ -439,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/Github%20Education%E8%AE%A4%E8%AF%81/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/Github%20Education%E8%AE%A4%E8%AF%81/" class="md-nav__link">
         
   
   
@@ -472,18 +466,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -504,7 +500,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -522,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -547,10 +543,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用git命令
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -566,6 +589,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 写在前面
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -578,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/ssh/" class="md-nav__link">
+      <a href="../ssh/" class="md-nav__link">
         
   
   
@@ -606,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="md-nav__link">
+      <a href="../%E7%83%A7%E5%BD%95%E5%99%A8/" class="md-nav__link">
         
   
   
@@ -634,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/livewatch/" class="md-nav__link">
+      <a href="../livewatch/" class="md-nav__link">
         
   
   
@@ -717,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/" class="md-nav__link">
+      <a href="../../checklist/" class="md-nav__link">
         
   
   
@@ -745,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/%E7%94%B5%E6%9C%BA/" class="md-nav__link">
+      <a href="../../checklist/%E7%94%B5%E6%9C%BA/" class="md-nav__link">
         
   
   
@@ -773,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/%E7%83%A7%E5%BD%95/" class="md-nav__link">
+      <a href="../../checklist/%E7%83%A7%E5%BD%95/" class="md-nav__link">
         
   
   
@@ -801,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+      <a href="../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="md-nav__link">
         
   
   
@@ -844,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -871,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -898,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%A7%86%E8%A7%89%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -925,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%AE%A3%E8%BF%90%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -965,6 +1019,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 写在前面
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -980,11 +1053,79 @@
 
 
 
-<h1 id="gmaster">欢迎来到GMaster战队文档库</h1>
-<p>这里是西交利物浦大学GMaster战队文档库。</p>
-<p>本仓库由2026届软件组成员发起，由战队成员集体建设与维护，承载着我们在研发中积累的实践经验和系统知识。我们希望通过系统化的文档，帮助每位队员——无论是刚刚入门的新成员，还是经验丰富的老将——都能更顺畅地开展开发，更快地定位问题，更高效地协同工作，从而将更多精力专注于创新与突破。</p>
-<p>文档库将持续演进，与项目同步成长。我们鼓励每一位队员在使用中补充、修正与完善——你的每一次提交，都是在为战队积累宝贵的资产。</p>
-<p>欢迎探索，欢迎共建，欢迎一起打造我们共同的技术记忆。</p>
+<h1 id="git">常用git命令</h1>
+<h2 id="_1">📌 写在前面</h2>
+<p>如果此文档仍有遗漏，可使用 git help <command> 获取更详细的帮助信息。</p>
+<h1 id="_2">基础操作</h1>
+<pre><code class="language-bash">git status                     # 查看状态
+git log --oneline              # 简洁查看提交历史
+git diff                       # 查看未暂存的修改
+git diff --staged              # 查看已暂存的修改
+git add &lt;file&gt;                 # 添加文件到暂存区
+</code></pre>
+<h2 id="_3">暂存文件&amp;储藏文件</h2>
+<pre><code class="language-bash">git add .                     # 添加所有文件
+git rm &lt;file&gt;                 # 删除文件并暂存
+git mv &lt;old&gt; &lt;new&gt;            # 重命名文件并暂存
+git stash                     # 暂存当前修改
+git stash list                # 查看储藏列表
+git stash pop                 # 恢复并删除最近储藏
+git stash apply               # 恢复但不删除
+git stash drop                # 删除最近储藏
+</code></pre>
+<h2 id="_4">分支管理</h2>
+<pre><code class="language-bash">git branch                        # 查看本地分支
+git branch &lt;name&gt;                 # 创建新分支
+git checkout &lt;branch&gt;             # 切换分支
+git checkout -b &lt;branch&gt;          # 创建并切换分支
+git merge &lt;branch&gt;                # 合并分支
+git branch -d &lt;branch&gt;            # 删除分支
+git branch -D &lt;branch&gt;            # 强制删除分支
+git push origin --delete &lt;branch&gt; # 删除远程分支
+</code></pre>
+<h2 id="git_1">git记录管理</h2>
+<pre><code class="language-bash">git checkout -- &lt;file&gt;                # 撤销对文件的修改
+git checkout &lt;commit-hash&gt; -- &lt;file&gt;  # 恢复指定提交的文件
+git reset &lt;file&gt;                      # 取消暂存文件
+git checkout &lt;commit-hash&gt;            # 回到指定提交（分离头指针状态）
+git reset HEAD~1                      # 撤销最近一次提交（保留更改）
+git reset --hard HEAD~1               # 彻底撤销最近一次提交
+git commit --amend                    # 修改最近一次提交信息
+git rebase -i HEAD~3                  # 交互式合并最近3次提交
+git cherry-pick &lt;commit-hash&gt;         # 应用指定提交
+git clean -fd                         # 删除未跟踪的文件和目录
+</code></pre>
+<h2 id="_5">提交到远程</h2>
+<pre><code class="language-bash">git pull                       # 重要！拉取远程更新（fetch+merge）
+git push origin &lt;branch&gt;       # 推送到远程分支
+git push -u origin &lt;branch&gt;    # 设置上游并推送
+git fetch                      # 仅获取远程更新
+git pull --rebase              # 拉取并变基
+</code></pre>
+<h2 id="_6">强制覆盖（一般不建议）</h2>
+<pre><code class="language-bash">git push --force              # 强制推送（覆盖远程）
+git push --force-with-lease   # 更安全的强制推送
+git reset --hard origin/main  # 强制本地与远程同步
+</code></pre>
+<h2 id="_7">远程</h2>
+<pre><code class="language-bash">git remote add &lt;name&gt; &lt;url&gt;          # 添加远程仓库
+git remote -v                        # 查看远程仓库
+git remote remove &lt;name&gt;             # 删除远程仓库
+git remote rename &lt;old&gt; &lt;new&gt;        # 重命名远程仓库
+git remote show &lt;name&gt;               # 查看远程仓库详情
+git remote set-url &lt;name&gt; &lt;newurl&gt;   # 修改远程仓库地址
+</code></pre>
+<h2 id="_8">查看日志</h2>
+<pre><code class="language-bash">git log                       # 详细日志
+git log --oneline             # 简洁日志
+git log --graph               # 图形化显示分支
+git log --stat                # 显示文件改动统计
+git log -p                    # 显示具体改动内容
+git log --since=&quot;2024-01-01&quot;  # 按时间筛选
+git log --author=&quot;name&quot;       # 按作者筛选
+git log -S &quot;function&quot;         # 搜索代码改动
+</code></pre>
+<hr />
 
 
 
@@ -1034,10 +1175,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

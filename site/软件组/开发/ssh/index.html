@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.gmaster.com/">
+        <link rel="canonical" href="https://docs.gmaster.com/%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/ssh/">
       
       
+        <link rel="prev" href="../%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/">
       
-        <link rel="next" href="%E8%BD%AF%E4%BB%B6%E7%BB%84/">
+      
+        <link rel="next" href="../%E7%83%A7%E5%BD%95%E5%99%A8/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Gmaster Documentation</title>
+        <title>SSH - Gmaster Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gmaster" class="md-skip">
+        <a href="#ssh" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Gmaster Documentation" class="md-header__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
+    <a href="../../.." title="Gmaster Documentation" class="md-header__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              首页
+              SSH
             
           </span>
         </div>
@@ -178,7 +180,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Gmaster Documentation" class="md-nav__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
+    <a href="../../.." title="Gmaster Documentation" class="md-nav__button md-logo" aria-label="Gmaster Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -193,19 +195,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -221,7 +214,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -230,18 +222,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -262,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -280,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -355,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/" class="md-nav__link">
         
   
   
@@ -383,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/%E8%87%AA%E5%AD%A6%E6%B8%85%E5%8D%95/" class="md-nav__link">
         
   
   
@@ -411,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/Lesson1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
         
   
   
@@ -439,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%9F%B9%E8%AE%AD/Github%20Education%E8%AE%A4%E8%AF%81/" class="md-nav__link">
+      <a href="../../%E5%9F%B9%E8%AE%AD/Github%20Education%E8%AE%A4%E8%AF%81/" class="md-nav__link">
         
   
   
@@ -472,18 +466,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -504,7 +500,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -522,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -550,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   
@@ -575,10 +571,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/ssh/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -594,6 +617,159 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ssh_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成SSH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ed25519" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 生成密钥（推荐使用 ed25519）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 启动 SSH 代理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 添加私钥到代理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 查看公钥内容（复制到剪贴板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubgitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        将公钥添加到GitHub/GitLab/其他平台
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpsssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS修改为SSH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPS修改为SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 查看当前远程URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 修改远程URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 验证修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试SSH连接
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -606,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/%E7%83%A7%E5%BD%95%E5%99%A8/" class="md-nav__link">
+      <a href="../%E7%83%A7%E5%BD%95%E5%99%A8/" class="md-nav__link">
         
   
   
@@ -634,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/%E5%BC%80%E5%8F%91/livewatch/" class="md-nav__link">
+      <a href="../livewatch/" class="md-nav__link">
         
   
   
@@ -717,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/" class="md-nav__link">
+      <a href="../../checklist/" class="md-nav__link">
         
   
   
@@ -745,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/%E7%94%B5%E6%9C%BA/" class="md-nav__link">
+      <a href="../../checklist/%E7%94%B5%E6%9C%BA/" class="md-nav__link">
         
   
   
@@ -773,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/%E7%83%A7%E5%BD%95/" class="md-nav__link">
+      <a href="../../checklist/%E7%83%A7%E5%BD%95/" class="md-nav__link">
         
   
   
@@ -801,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%BD%AF%E4%BB%B6%E7%BB%84/checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+      <a href="../../checklist/%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/" class="md-nav__link">
         
   
   
@@ -844,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E7%A1%AC%E4%BB%B6%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -871,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -898,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E8%A7%86%E8%A7%89%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E8%A7%86%E8%A7%89%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -925,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%AE%A3%E8%BF%90%E7%BB%84/" class="md-nav__link">
+      <a href="../../../%E5%AE%A3%E8%BF%90%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -965,6 +1141,147 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ssh_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生成SSH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ed25519" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 生成密钥（推荐使用 ed25519）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 启动 SSH 代理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 添加私钥到代理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 查看公钥内容（复制到剪贴板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubgitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        将公钥添加到GitHub/GitLab/其他平台
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpsssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS修改为SSH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPS修改为SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 查看当前远程URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 修改远程URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 验证修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试SSH连接
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -980,11 +1297,49 @@
 
 
 
-<h1 id="gmaster">欢迎来到GMaster战队文档库</h1>
-<p>这里是西交利物浦大学GMaster战队文档库。</p>
-<p>本仓库由2026届软件组成员发起，由战队成员集体建设与维护，承载着我们在研发中积累的实践经验和系统知识。我们希望通过系统化的文档，帮助每位队员——无论是刚刚入门的新成员，还是经验丰富的老将——都能更顺畅地开展开发，更快地定位问题，更高效地协同工作，从而将更多精力专注于创新与突破。</p>
-<p>文档库将持续演进，与项目同步成长。我们鼓励每一位队员在使用中补充、修正与完善——你的每一次提交，都是在为战队积累宝贵的资产。</p>
-<p>欢迎探索，欢迎共建，欢迎一起打造我们共同的技术记忆。</p>
+<h1 id="ssh">SSH使用指南</h1>
+<h2 id="ssh_1">生成SSH</h2>
+<h3 id="1-ed25519">1. 生成密钥（推荐使用 ed25519）</h3>
+<pre><code class="language-bash">ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+</code></pre>
+<p>按提示操作，通常直接回车使用默认路径和设置密码。密码可选，但建议设置以增加安全性。输入时并不会显示字符。</p>
+<h3 id="2-ssh">2. 启动 SSH 代理</h3>
+<pre><code class="language-bash">eval &quot;$(ssh-agent -s)&quot;
+</code></pre>
+<h3 id="3">3. 添加私钥到代理</h3>
+<pre><code class="language-bash">ssh-add ~/.ssh/id_ed25519
+</code></pre>
+<h3 id="4">4. 查看公钥内容（复制到剪贴板）</h3>
+<pre><code class="language-bash">cat ~/.ssh/id_ed25519.pub
+</code></pre>
+<h2 id="githubgitlab">将公钥添加到GitHub/GitLab/其他平台</h2>
+<ol>
+<li>登录你的GitHub/GitLab账户。</li>
+<li>进入“Settings” &gt; “SSH and GPG keys” &gt; “New SSH key”。</li>
+<li>粘贴你的公钥内容，保存。</li>
+</ol>
+<h2 id="httpsssh">HTTPS修改为SSH</h2>
+<p>要将Git仓库的远程URL从HTTPS修改为SSH，可以按照以下步骤操作：</p>
+<h3 id="1-url">1. <strong>查看当前远程URL</strong></h3>
+<p>使用以下命令查看当前的远程URL：
+   <code>bash
+   git remote -v</code></p>
+<h3 id="2-url">2. <strong>修改远程URL</strong></h3>
+<p>使用以下命令将远程URL从HTTPS修改为SSH：
+   <code>bash
+    git remote set-url origin git@github.com:username/repository.git</code>
+ 请将<code>username</code>和<code>repository</code>替换为你的GitHub用户名和仓库名称。</p>
+<h3 id="3_1">3. <strong>验证修改</strong></h3>
+<p>再次使用以下命令查看远程URL，确保修改成功：
+   <code>bash
+   git remote -v</code></p>
+<h2 id="ssh_2">测试SSH连接</h2>
+<pre><code class="language-bash">ssh -T git@github.com
+</code></pre>
+<p>如果看到类似以下的消息，说明SSH配置成功：</p>
+<pre><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<hr />
 
 
 
@@ -1034,10 +1389,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
