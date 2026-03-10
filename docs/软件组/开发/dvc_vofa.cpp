@@ -33,15 +33,22 @@
 /* Variables -----------------------------------------------------------------*/
 
 // 如果需要不同大小,可以声明: Vofa<200> vofa_large;
+static VofaUart6RxHandler s_vofaUart6RxHandler = nullptr;
 
 /* Function prototypes -------------------------------------------------------*/
 
 /* User code -----------------------------------------------------------------*/
 
+void Vofa_SetUART6RxHandler(VofaUart6RxHandler handler)
+{
+    s_vofaUart6RxHandler = handler;
+}
+
 extern "C" __weak void UART6RxCallback(uint8_t *pRxData, uint16_t rxDataLength)
 {
-    (void)pRxData;
-    (void)rxDataLength;
+    if (s_vofaUart6RxHandler != nullptr) {
+        s_vofaUart6RxHandler(pRxData, rxDataLength);
+    }
 }
 
 /**
