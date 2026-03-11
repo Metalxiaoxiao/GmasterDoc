@@ -297,10 +297,14 @@ public:
         GetActiveInstance() = this;
         Vofa_SetUART6RxHandler(ParameterRxCallback);
 
-        // 检查UART6是否已初始化
-        if (huart6.gState != HAL_UART_STATE_READY) {
-            UART_Init(&huart6, UART6RxCallback, 128);
+        // 如果还未由 CubeMX 初始化，则先完成 UART6 外设初始化。
+        if (huart6.gState == HAL_UART_STATE_RESET) {
+            MX_USART6_UART_Init();
         }
+
+        // 无条件启动/注册接收链路，确保 data:xxx 指令能被处理。
+        UART_Init(&huart6, UART6RxCallback, 128);
+
         if (functionCount == 0) {
             return;
         }
