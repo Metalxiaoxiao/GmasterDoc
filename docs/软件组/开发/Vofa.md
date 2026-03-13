@@ -1,243 +1,134 @@
 # Vofa
-精细调节PID和难以把脉完成的PID需要使用Vofa+进行精细化调参。新手在使用vofa可能会出现一些问题。请阅读此文档。
-## 1. Vofa下载
-[点击下载vofa](https://je00.github.io/downloads/vofa+_1.3.10_x64_installer.exe)
 
-***
-## 2. 添加Vofa配置文件
+精细调节 PID 和难以把脉完成的 PID 需要使用 Vofa+ 进行精细化调参。新手在使用 Vofa 时可能会遇到一些问题，请阅读此文档。
 
-### 方法一：来自2025届邹绎达古法配置
-1. 添加 **Task\src\tsk_vofa.cpp** ,参考模板如下 (摘录自工程2026_radar) ：
-```bash
-/**
- ******************************************************************************
- * @file           : vofa.cpp
- * @brief          : vofa串口绘图软件数据发送任务
- ******************************************************************************
- * @attention
- *
- * Copyright (c) 2026 GMaster
- * All rights reserved.
- *
- ******************************************************************************
- */
-/* Includes ------------------------------------------------------------------*/
-#include "crt_gimbal.hpp"
-#include "alg_pid.hpp"
-#include "usart.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include <cstdint>
+## 1. Vofa 下载
 
-extern CascadePID yawPID;
-extern CascadePID pitchPID;
+[点击下载 vofa](https://je00.github.io/downloads/vofa+_1.3.10_x64_installer.exe)
 
-/* Typedef -------------------------------------------------------------------*/
+---
 
-/* Define --------------------------------------------------------------------*/
-template <size_t N>
-class Vofa
+## 2. 添加 Vofa 配置文件
+
+直接在 `dev` 文件夹内加入 `.cpp` 和 `.hpp` 文件：
+
+点击查看 [vofa.cpp](dvc_vofa.cpp)
+
+点击查看 [vofa.hpp](dvc_vofa.hpp)
+
+配合 `tsk_test.cpp` 使用，只需要调用这里面对应的函数即可使用（初始化 `Init`、写入函数 `WriteData` 等）。
+
+#### 方法二附加：VOFA+ 串口调试助手（`Vofa` 类）使用指南
+
+该模块（`Vofa` 类）具备两大核心功能：
+
+1. `实时数据上传`：通过 JustFloat 协议高速发送浮点数据波形。
+2. `在线参数调优`：通过串口命令行实时修改程序内部参数。
+
+##### 快速集成
+
+由于使用了模板类，建议在全局或类的成员变量中定义。`N` 代表你需要同时发送的数据通道数量。
+
+```cpp
+#include "dvc_vofa.hpp"
+
+// 定义一个拥有 9 个数据通道的 Vofa 实例
+Vofa<9> vofa;
+```
+
+在任务开始前配置数据源：
+
+```cpp
+extern "C" void test_task(void *argument)
 {
-private:
-    class Frame {
-    private:
-        static constexpr size_t DATA_FRAME_SIZE = N; // 数据帧大小
-        fp32 fdata[DATA_FRAME_SIZE + 1];            // 发送缓冲区（+1用于帧尾）
-        uint16_t fPos   = 0;                        //  当前发送缓冲区写入位置
-
-    public:
-        Frame() = default;
-
-        bool write(fp32 data)
-        {
-            if (fPos >= DATA_FRAME_SIZE) {
-                return false; // 缓冲区已满
-            }
-            fdata[fPos++] = data;
-            return true;
-        }
-
-        const fp32* getData()
-        {
-            // 添加帧尾
-            uint8_t* tail = reinterpret_cast<uint8_t*>(&fdata[fPos]);
-            tail[0] = 0x00;
-            tail[1] = 0x00;
-            tail[2] = 0x80;
-            tail[3] = 0x7f;
-            return fdata;
-        }
-
-        uint16_t getSize() const
-        {
-            return fPos * sizeof(fp32) + 4;
-        }
-
-        void reset()
-        {
-            fPos = 0;
-        }
-    } m_frame;
-
-    Gimbal &m_gimbal;
-
-public:
-    Vofa(Gimbal &gimbal) : m_gimbal(gimbal) {}
-
-    void gimbalPIDData()
-    {
-        m_frame.write(yawPID.getOuterLoop().pidGetData().output);
-        m_frame.write(pitchPID.getOuterLoop().pidGetData().output);
-        m_frame.write(yawPID.getInnerLoop().pidGetData().output);
-        m_frame.write(pitchPID.getInnerLoop().pidGetData().output);
-        m_frame.write(m_gimbal.getPitchTargetAngle());
-        m_frame.write(m_gimbal.getYawTargetAngle());
-        m_frame.write(m_gimbal.getIMU()->getGyro().y);
-        m_frame.write(m_gimbal.getIMU()->getGyro().z);
-    }
-
-    void sendFrame()
-    {
-        // 通过串口发送数据
-        HAL_UART_Transmit_DMA(&huart6, reinterpret_cast<const uint8_t*>(m_frame.getData()), m_frame.getSize());
-        m_frame.reset();
-    }
-};
-
-/* Macro ---------------------------------------------------------------------*/
-
-/* Variables -----------------------------------------------------------------*/
-extern Gimbal gimbal;
-static Vofa<100> vofa(gimbal); // 使用100个数据帧的Vofa实例
-// 如果需要不同大小,可以声明: Vofa<200> vofa_large;
-
-/* Function prototypes -------------------------------------------------------*/
-
-/* User code -----------------------------------------------------------------*/
-
-extern "C" void vofa_task(void *argument)
-{
+    CAN_Init(&hcan1, can1RxCallback);                  // 初始化CAN1
+    UART_Init(&huart3, dr16ITCallback, 36);            // 初始化DR16串口
+    vofa.Init();                                      // 初始化VOFA
+    vofa.AddParameterListener("data", [](fp32 *newValue) {
+        data = *newValue;
+        printf("TestParameter updated: %f\n", *newValue);
+    });
     TickType_t taskLastWakeTime = xTaskGetTickCount(); // 获取任务开始时间
     while (1) {
-
-    #ifdef DEBUG
-        // 设置需要发送的数据
-        vofa.gimbalPIDData();
-
+        motor.openloopControl(0.0f);
+        transmitMotorsControlData();
+        vofa.writeData(data);
         vofa.sendFrame();
-    #endif // DEBUG
-
-        vTaskDelayUntil(&taskLastWakeTime, pdMS_TO_TICKS(1)); // 确保任务以定周期1ms运行
+        vTaskDelayUntil(&taskLastWakeTime, 1); // 确保任务以定周期1ms运行
     }
 }
 ```
 
-2. 添加 **Chariot\src\crt_vofa.c** ，参考模板如下 (摘录自工程2026_cascade_leg_infantry) ：
-```bash
-/**
- ******************************************************************************
- * @file           : crt_vofa.c
- * @brief          : vofa串口调试助手
- *                   重定向串口输出到UART6
- ******************************************************************************
- * @attention
- *
- * Copyright (c) 2026 GMaster
- * All rights reserved.
- *
- ******************************************************************************
- */
-/* Includes ------------------------------------------------------------------*/
-#include <sys/stat.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
-#include <stdio.h>
-#include <signal.h>
-#include <time.h>
-#include <sys/time.h>
-#include <sys/times.h>
-#include "usart.h"
+##### 在线调参使用方法
 
-/* Typedef -------------------------------------------------------------------*/
+使用 `AddParameterListener` 绑定参数名和回调函数：
 
-/* Define --------------------------------------------------------------------*/
-
-/* Macro ---------------------------------------------------------------------*/
-
-/* Variables -----------------------------------------------------------------*/
-
-/* Function prototypes -------------------------------------------------------*/
-
-/* User code -----------------------------------------------------------------*/
-
-/**
- * @brief 重定向printf输出到UART6
- * @param file 文件描述符
- * @param ptr 要发送的数据指针
- * @param len 数据长度
- * @return 实际发送的字节数
- */
-int _write(int file, char *ptr, int len)
-{
-    if (file == STDOUT_FILENO || file == STDERR_FILENO) {
-        // 将数据通过UART6发送
-        HAL_UART_Transmit(&huart6, (uint8_t *)ptr, len, HAL_MAX_DELAY);
-        // HAL_UART_Transmit_DMA(&huart6, (uint8_t *)ptr, len);
-        return len;
-    }
-    return -1;
-}
+```cpp
+// 示例：调节云台 PID
+vofa.AddParameterListener("gimbal_p", [](fp32 *val) {
+    gimbal_pid.kp = *val;
+});
 ```
-注意数据向串口输出到 **UART6**。
 
-3. 在.ioc文件中添加 **freertos进程** ，细节如图：
+在串口助手中发送以下格式字符串（支持换行符 `\n` 或回车符 `\r` 结束）：
 
-![vofa配置1](vofa配置.ioc文件1.png)
+格式：`参数名:数值`
 
-![vofa配置2](vofa配置.ioc文件2.png)
-
-4. 根目录下的 **Cmakelists** 中加入vofa例程。具体位置在:
-
-```bash
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    //很多很多例程
-    Task/src/tsk_vofa.cpp
-)
+```text
+gimbal_p:15.5
+speed:0
 ```
-### 方法二： 来自2026届赵辰硕巧思配置
-直接在dev文件夹内加入.cpp和.hpp文件:
 
-点击查看[vofa.cpp](dvc_vofa.cpp)
+注意：
 
-点击查看[vofa.hpp](dvc_vofa.hpp)
+1. 冒号必须是英文冒号 `:`。
+2. 参数名区分大小写。
+3. 支持一次发送多条指令（需用换行分隔）。
 
-配合 **tsk_test.cpp** 使用，只需要调用这里面对应的函数即可使用。（初始化init、写入函数_write）
+##### VOFA+ 上位机设置
 
+1. 协议选择：`FireWater`（即 JustFloat 协议）。
+2. 数据引擎：开启。
+3. 添加控件：拖入 `Waveform`（波形图）。
+4. 绑定通道：
 
-## 3. 使用vofa
-详见[B站vofa教程](https://www.bilibili.com/video/BV1q1421R7uK/?spm_id_from=333.337.search-card.all.click)
+   右键波形图 -> 配置 -> 绑定数据源。
+   代码中 `BindFunction` 的调用顺序对应通道索引：
+   第 1 个绑定的函数 -> `ch0`
+   第 2 个绑定的函数 -> `ch1`
+   以此类推。
 
-一般来说调PID使用 **Justfloat** 即可。
+---
 
-## 4.常见问题
-1. 有数据但是不是你要的数据 模式没有选择串口
-2. 读不到数据
-- 波特率没对齐
-- 端口选择错误
-- Tx/Rx有没有接反（T对R，R对T）
-- vofa传奇bug
+## 3. 使用 Vofa
 
-    如果你打开串口，确认波特率正确、端口正确、接线Tx/Rx正确……以上所有问题都排查过并确认没有问题
+详见 [B站 vofa 教程](https://www.bilibili.com/video/BV1q1421R7uK/?spm_id_from=333.337.search-card.all.click)
 
-    **你 先 别 急**
+一般来说调 PID 使用 `JustFloat` 即可。
 
-    这个是vofa祖传bug
+## 4. 常见问题
 
-    - 先关闭你的vofa
+你 先 别 急
 
-    - 寻找 **C:\Users\[username]\AppData\Local\vofa+** ,将这个文件夹删掉。
-    - 确认这个文件夹中内容删干净之后，再次重启vofa
+1. 有数据但是不是你要的数据：模式没有选择串口。
+2. 读不到数据：
 
-    请注意，这个vofa可能在任何时间、任何地点、随机概率崩溃。不要怀疑自己也不要怀疑你的电脑，毕竟这个vofa已经很久没更新了。
+- 波特率没对齐。
+- 端口选择错误。
+- Tx/Rx 有没有接反（T 对 R，R 对 T）。
+- vofa 传奇 bug。
+
+如果你打开串口，确认波特率正确、端口正确、接线 Tx/Rx 正确，以上所有问题都排查过并确认没有问题，先别急，这个是 vofa 祖传 bug：
+
+1. 先关闭你的 vofa。
+2. 寻找 `C:\Users\[username]\AppData\Local\vofa+`，将这个文件夹删掉。
+3. 确认这个文件夹中内容删干净之后，再次重启 vofa。
+
+请注意，这个 vofa 可能在任何时间、任何地点、随机概率崩溃。不要怀疑自己也不要怀疑你的电脑，毕竟这个 vofa 已经很久没更新了。
+
+补充排查（方法二常见问题）：
+
+1. 参数修改没反应：检查是否发送了换行、参数名是否完全一致、`AddParameterListener` 参数名是否常量字符串。
+2. 波形显示乱码或锯齿：确认 VOFA+ 协议为 `FireWater`，并确认波特率与 `usart.c` 一致（常见 `115200` 或更高）。
+3. 可以发送多少个数据：由模板参数 `N` 决定，例如 `Vofa<10>` 最多支持 10 个通道；超出 `N` 的绑定会无效。
 

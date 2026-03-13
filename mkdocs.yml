@@ -19,6 +19,9 @@ nav:
           - 烧录器: 软件组/开发/烧录器.md
           - LiveWatch: 软件组/开发/livewatch.md
           - UART线序: 软件组/开发/UART线序.md
+          - CAN负载计算: 软件组/开发/CAN负载计算器.md
+          - PID: 软件组/开发/PID.md
+          - Vofa调试: 软件组/开发/Vofa.md
       - Checklist:
           - Checklist首页: 软件组/checklist/index.md
           - 电机: 软件组/checklist/电机.md

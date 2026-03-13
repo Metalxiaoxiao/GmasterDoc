@@ -33,15 +33,22 @@
 /* Variables -----------------------------------------------------------------*/
 
 // 如果需要不同大小,可以声明: Vofa<200> vofa_large;
+static VofaUart6RxHandler s_vofaUart6RxHandler = nullptr;
 
 /* Function prototypes -------------------------------------------------------*/
 
 /* User code -----------------------------------------------------------------*/
 
+void Vofa_SetUART6RxHandler(VofaUart6RxHandler handler)
+{
+    s_vofaUart6RxHandler = handler;
+}
+
 extern "C" __weak void UART6RxCallback(uint8_t *pRxData, uint16_t rxDataLength)
 {
-    (void)pRxData;
-    (void)rxDataLength;
+    if (s_vofaUart6RxHandler != nullptr) {
+        s_vofaUart6RxHandler(pRxData, rxDataLength);
+    }
 }
 
 /**
@@ -51,13 +58,26 @@ extern "C" __weak void UART6RxCallback(uint8_t *pRxData, uint16_t rxDataLength)
  * @param len 数据长度
  * @return 实际发送的字节数
  */
-int _write(int file, char *ptr, int len)
+extern "C" int _write(int file, char *ptr, int len)
 {
-    if (file == STDOUT_FILENO || file == STDERR_FILENO) {
-        // 将数据通过UART6发送
-        HAL_UART_Transmit(&huart6, (uint8_t *)ptr, len, HAL_MAX_DELAY);
-        // HAL_UART_Transmit_DMA(&huart6, (uint8_t *)ptr, len);
-        return len;
+    if ((file != STDOUT_FILENO && file != STDERR_FILENO) || ptr == nullptr || len <= 0) {
+        errno = EBADF;
+        return -1;
     }
-    return -1;
+
+    // HAL_UART_Transmit 的长度参数是 uint16_t，长数据分片发送。
+    int remaining = len;
+    uint8_t *data = reinterpret_cast<uint8_t *>(ptr);
+
+    while (remaining > 0) {
+        uint16_t chunk = static_cast<uint16_t>((remaining > 0xFFFF) ? 0xFFFF : remaining);
+        if (HAL_UART_Transmit(&huart6, data, chunk, HAL_MAX_DELAY) != HAL_OK) {
+            errno = EIO;
+            return -1;
+        }
+        data += chunk;
+        remaining -= chunk;
+    }
+
+    return len;
 }
